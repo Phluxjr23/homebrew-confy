@@ -1,0 +1,29 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: set up homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      
+      - name: run brew test-bot
+        run: |
+          brew test-bot --only-cleanup-before
+          brew test-bot --only-formulae --no-audit
+      
+      - name: upload bottles as artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: bottles
+          path: '*.bottle.*'
+
