@@ -19,11 +19,4 @@ jobs:
         run: |
           brew test-bot --only-cleanup-before
           brew test-bot --only-formulae --no-audit
-      
-      - name: upload bottles as artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bottles
-          path: '*.bottle.*'
 
