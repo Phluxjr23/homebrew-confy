@@ -5,8 +5,8 @@ homebrew tap for [confy-tui](https://phluxjr.net/confy)
 ## installation
 
 ```bash
-brew tap Phluxjr23/confy
+brew tap phluxjr/confy
 brew install confy-tui
 ```
 
-for more info, docs, or the source code, see [Phluxjr23/confy](https://github.com/Phluxjr23/confy)
+for more info, docs, or the source code, see [phluxjr/confy](https://github.com/phluxjr/confy)
